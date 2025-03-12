@@ -8,11 +8,11 @@
 		<version>3.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.First</groupId>
-	<artifactId>FirstApi</artifactId>
+	<groupId>com.jnc</groupId>
+	<artifactId>journalApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>FirstApi</name>
-	<description>Demo project for Spring Boot</description>
+	<name>journalApp</name>
+	<description>End to End Encrypted Journal App</description>
 	<url/>
 	<licenses>
 		<license/>

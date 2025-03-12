@@ -1,10 +1,10 @@
-package com.First.FirstApi;
+package com.jnc.journalApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FirstApiApplicationTests {
+class JournalAppApplicationTests {
 
 	@Test
 	void contextLoads() {
