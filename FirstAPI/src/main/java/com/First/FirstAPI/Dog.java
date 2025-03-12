@@ -1,4 +1,4 @@
-package com.Learn.Learning;
+package com.First.FirstAPI;
 
 import org.springframework.stereotype.Component;
 
