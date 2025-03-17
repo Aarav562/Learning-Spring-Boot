@@ -1,5 +1,6 @@
 package com.jnc.journalApp.Service;
 
+import com.jnc.journalApp.Entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,15 @@ public class JournalEntryService{
     @Autowired
     private JournalEntryRepo journalEntryRepo;
 
-    public void saveEntry(journalEntry JournalEntry){
-        try{
-            JournalEntry.setDate(LocalDateTime.now());
-            journalEntryRepo.save(JournalEntry);
-        } catch (Exception e) {
-            log.error("Exception: ",e);
-        }
+    @Autowired
+    private UserService userService;
+
+    public void saveEntry(journalEntry JournalEntry, String userName){
+        User user = userService.findByUserName(userName);
+        JournalEntry.setDate(LocalDateTime.now());
+        journalEntry saved = journalEntryRepo.save(JournalEntry);
+        user.getJournalEntries().add(saved);
+        userService.saveEntry(user);
     }
 
     public List<journalEntry> getAll(){
