@@ -41,6 +41,12 @@ public class UserService {
     public void deleteById(ObjectId id){
         userRepository.deleteById(id);
     }
+
+    public void deleteByUserName(String name){
+        userRepository.deleteByUsername(name);
+    }
+
+
     public User findByUserName(String username){
         return userRepository.findByUsername(username);
     }
