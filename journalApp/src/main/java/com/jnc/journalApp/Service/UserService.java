@@ -21,10 +21,14 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void saveEntry(User userEntry){
+    public void saveNewEntry(User userEntry){
         userEntry.setPassword(passwordEncoder.encode(userEntry.getPassword()));
         userEntry.setRoles(Arrays.asList("USER"));
         userRepository.save(userEntry);
+    }
+
+    public void saveUser(User user){
+        userRepository.save(user);
     }
 
 
