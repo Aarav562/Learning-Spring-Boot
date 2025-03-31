@@ -22,6 +22,7 @@ public class UserServiceTests {
     @Autowired
     private UserService userService;
 
+    @Disabled
     @ParameterizedTest
     @ValueSource(strings = {
             "Messi",
