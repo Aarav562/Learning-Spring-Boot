@@ -3,6 +3,8 @@ package com.jnc.journalApp.Service;
 import com.jnc.journalApp.Entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import  com.jnc.journalApp.repository.JournalEntryRepo;
 import  com.jnc.journalApp.Entity.journalEntry;
@@ -22,6 +24,8 @@ public class JournalEntryService{
 
     @Autowired
     private UserService userService;
+
+
 
     @Transactional
     public void saveEntry(journalEntry JournalEntry, String userName){
@@ -48,6 +52,7 @@ public class JournalEntryService{
         return journalEntryRepo.findById(id);
     }
 
+
     @Transactional
     public boolean deleteById(ObjectId id, String username){
         boolean isRemoved = false;
@@ -59,7 +64,6 @@ public class JournalEntryService{
                 journalEntryRepo.deleteById(id);
             }
         } catch (Exception e) {
-            System.out.println(e);
             throw new RuntimeException("An error occurred while Deleting Journal.",e);
         }
         return isRemoved;

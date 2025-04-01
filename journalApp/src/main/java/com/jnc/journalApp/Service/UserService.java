@@ -21,10 +21,18 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void saveNewEntry(User userEntry){
-        userEntry.setPassword(passwordEncoder.encode(userEntry.getPassword()));
-        userEntry.setRoles(Arrays.asList("USER"));
-        userRepository.save(userEntry);
+
+    public boolean saveNewEntry(User userEntry){
+        try{
+            userEntry.setPassword(passwordEncoder.encode(userEntry.getPassword()));
+            userEntry.setRoles(Arrays.asList("USER"));
+            userRepository.save(userEntry);
+            return true;
+        } catch (Exception e) {
+            //log.error("Error Occurred for {} :",userEntry.getUsername(), e);
+            log.debug("hahahaha");
+            return false;
+        }
     }
 
     public void saveUser(User user){

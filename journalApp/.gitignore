@@ -35,3 +35,5 @@ build/
 
 application.properties
 src/main/resources/*.yml
+journalAPP.log
+src/main/resources/logback.xml
