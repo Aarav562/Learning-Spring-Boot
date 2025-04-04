@@ -30,7 +30,7 @@ public class UserService {
             return true;
         } catch (Exception e) {
             //log.error("Error Occurred for {} :",userEntry.getUsername(), e);
-            log.debug("hahahaha");
+            //log.debug("hahahaha");
             return false;
         }
     }
